@@ -149,9 +149,10 @@ class Cropper:
     Detect and Crop the region
     '''
     def crop(self, image_dir, completeness=False, target_size=(500,500)):
-
-        # read image
         image = cv2.imread(image_dir)
+        self.crop_image(image_dir, completeness=completeness, target_size=target_size)
+    
+    def crop_image(self, image, completeness=False, target_size=(500,500)):
         height, width, channel= image.shape
 
         # the shape of image, horizontal or portrait
